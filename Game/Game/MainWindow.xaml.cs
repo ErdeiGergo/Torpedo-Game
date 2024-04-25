@@ -29,7 +29,8 @@ namespace Game
 
         private void Start(object sender, RoutedEventArgs e)
         {
-            PlayerSide.RowDefinitions.Clear(); //Clear everything from the grids
+            //Clear everything out of the grids
+            PlayerSide.RowDefinitions.Clear();
             PlayerSide.ColumnDefinitions.Clear();
             PlayerSide.Children.Clear();
 
@@ -49,6 +50,7 @@ namespace Game
             Columns.ColumnDefinitions.Clear();
             Columns.Children.Clear();
 
+            //Add columns and rows to the grids
             for (int i = 0; i < 10; i++)
             {
                 PlayerSide.RowDefinitions.Add(new());
@@ -64,7 +66,7 @@ namespace Game
 
             for (int i = 0; i < 10; i++) //10 rows
             {
-                //The nubers of the rows
+                //The nubers next to the rows
                 Label nl = new();
                 nl.HorizontalAlignment = HorizontalAlignment.Center;
                 nl.VerticalAlignment = VerticalAlignment.Center;
@@ -79,7 +81,7 @@ namespace Game
                 Grid.SetRow(nl2, i);
                 Rows2.Children.Add(nl2);
 
-                //The letters of the columns
+                //The letters under/above the columns
                 Label nl3 = new();
                 nl3.HorizontalAlignment = HorizontalAlignment.Center;
                 nl3.VerticalAlignment = VerticalAlignment.Center;
@@ -89,6 +91,7 @@ namespace Game
 
                 for (int j = 0; j < 10; j++) //10 columns
                 {
+                    //Player table
                     Button nb = new();
                     nb.HorizontalAlignment = HorizontalAlignment.Stretch;
                     nb.VerticalAlignment = VerticalAlignment.Stretch;
@@ -96,13 +99,13 @@ namespace Game
                     Grid.SetColumn(nb, j);
                     PlayerSide.Children.Add(nb);
 
+                    //Player's attacks
                     Button nb2 = new();
                     nb2.HorizontalAlignment = HorizontalAlignment.Stretch;
                     nb2.VerticalAlignment = VerticalAlignment.Stretch;
                     Grid.SetRow(nb2, i);
                     Grid.SetColumn(nb2, j);
                     PlayerAttacks.Children.Add(nb2);
-
                 }
             }
         }
