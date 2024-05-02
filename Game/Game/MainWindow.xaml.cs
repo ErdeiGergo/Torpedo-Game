@@ -21,13 +21,17 @@ namespace Game
     public partial class MainWindow : Window
     {
         int[,] PlayerMatrix = new int[10, 10];
+        int[,] PlayerAttacksMatrix = new int[10, 10];
+        List<Button> PlayerButtons = new();
+        List<Button> PlayerAttacksButtons = new();
+        Random r = new();
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Start(object sender, RoutedEventArgs e)
+        public void GenerateMatrix()
         {
             //Clear everything out of the grids
             PlayerSide.RowDefinitions.Clear();
@@ -38,17 +42,17 @@ namespace Game
             PlayerAttacks.ColumnDefinitions.Clear();
             PlayerAttacks.Children.Clear();
 
-            Rows.RowDefinitions.Clear();
-            Rows.ColumnDefinitions.Clear();
-            Rows.Children.Clear();
+            PlayerRows.RowDefinitions.Clear();
+            PlayerRows.ColumnDefinitions.Clear();
+            PlayerRows.Children.Clear();
 
-            Rows2.RowDefinitions.Clear();
-            Rows2.ColumnDefinitions.Clear();
-            Rows2.Children.Clear();
+            PlayerAttackRows.RowDefinitions.Clear();
+            PlayerAttackRows.ColumnDefinitions.Clear();
+            PlayerAttackRows.Children.Clear();
 
-            Columns.RowDefinitions.Clear();
-            Columns.ColumnDefinitions.Clear();
-            Columns.Children.Clear();
+            TheBoardsColumns.RowDefinitions.Clear();
+            TheBoardsColumns.ColumnDefinitions.Clear();
+            TheBoardsColumns.Children.Clear();
 
             //Add columns and rows to the grids
             for (int i = 0; i < 10; i++)
@@ -59,9 +63,9 @@ namespace Game
                 PlayerAttacks.RowDefinitions.Add(new());
                 PlayerAttacks.ColumnDefinitions.Add(new());
 
-                Rows.RowDefinitions.Add(new());
-                Rows2.RowDefinitions.Add(new());
-                Columns.ColumnDefinitions.Add(new());
+                PlayerRows.RowDefinitions.Add(new());
+                PlayerAttackRows.RowDefinitions.Add(new());
+                TheBoardsColumns.ColumnDefinitions.Add(new());
             }
 
             for (int i = 0; i < 10; i++) //10 rows
@@ -72,14 +76,14 @@ namespace Game
                 nl.VerticalAlignment = VerticalAlignment.Center;
                 nl.Content = i + 1;
                 Grid.SetRow(nl, i);
-                Rows.Children.Add(nl);
+                PlayerRows.Children.Add(nl);
 
                 Label nl2 = new();
                 nl2.HorizontalAlignment = HorizontalAlignment.Center;
                 nl2.VerticalAlignment = VerticalAlignment.Center;
                 nl2.Content = i + 1;
                 Grid.SetRow(nl2, i);
-                Rows2.Children.Add(nl2);
+                PlayerAttackRows.Children.Add(nl2);
 
                 //The letters under/above the columns
                 Label nl3 = new();
@@ -87,27 +91,90 @@ namespace Game
                 nl3.VerticalAlignment = VerticalAlignment.Center;
                 nl3.Content = Convert.ToChar(i + 65);
                 Grid.SetColumn(nl3, i);
-                Columns.Children.Add(nl3);
+                TheBoardsColumns.Children.Add(nl3);
 
                 for (int j = 0; j < 10; j++) //10 columns
                 {
                     //Player table
+                    PlayerMatrix[i, j] = 0;
+
+                    //Player's attacks
+                    PlayerAttacksMatrix[i, j] = 0;
+                }
+            }
+        }
+
+        private void ShowPlayerMatrix()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
                     Button nb = new();
                     nb.HorizontalAlignment = HorizontalAlignment.Stretch;
                     nb.VerticalAlignment = VerticalAlignment.Stretch;
                     Grid.SetRow(nb, i);
                     Grid.SetColumn(nb, j);
                     PlayerSide.Children.Add(nb);
-
-                    //Player's attacks
-                    Button nb2 = new();
-                    nb2.HorizontalAlignment = HorizontalAlignment.Stretch;
-                    nb2.VerticalAlignment = VerticalAlignment.Stretch;
-                    Grid.SetRow(nb2, i);
-                    Grid.SetColumn(nb2, j);
-                    PlayerAttacks.Children.Add(nb2);
+                    PlayerButtons.Add(nb);
+                    switch (PlayerMatrix[i, j])
+                    {
+                        case 0:
+                            nb.Foreground = new SolidColorBrush(Colors.Gray);
+                            break;
+                    }
                 }
             }
         }
+
+        private void ShowPlayerAttacksMatrix()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    Button nb = new();
+                    nb.HorizontalAlignment = HorizontalAlignment.Stretch;
+                    nb.VerticalAlignment = VerticalAlignment.Stretch;
+                    Grid.SetRow(nb, i);
+                    Grid.SetColumn(nb, j);
+                    PlayerAttacks.Children.Add(nb);
+                    PlayerAttacksButtons.Add(nb);
+                    switch (PlayerMatrix[i, j])
+                    {
+                        case 0:
+                            nb.Foreground = new SolidColorBrush(Colors.Gray);
+                            break;
+                    }
+                }
+            }
+
+        }
+
+
+        private void Start()
+        {
+            GenerateMatrix();
+            ShowPlayerMatrix();
+            ShowPlayerAttacksMatrix();
+        }
+
+
+        private void Randomize()
+        {
+            PlayerButtons[r.Next(0, PlayerButtons.Count)].Foreground = new SolidColorBrush(Colors.Aqua);
+            Console.WriteLine(r.Next(0, PlayerButtons.Count + 1));
+        }
+
+        private void Start(object sender, RoutedEventArgs e)
+        {
+            Start();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Randomize();
+        }
+        
     }
 }
