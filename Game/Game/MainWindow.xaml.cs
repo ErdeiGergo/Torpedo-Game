@@ -26,6 +26,14 @@ namespace Game
         List<Button> PlayerAttacksButtons = new();
         Random r = new();
 
+        /*
+        The values of the matrixes:
+         0 - Empty - Gray
+         1 - Ship - Yellow
+         2 - Missed attacks - Black
+         3 - Hitted attacks - Red
+        */
+
         public MainWindow()
         {
             InitializeComponent();
@@ -113,16 +121,29 @@ namespace Game
                     Button nb = new();
                     nb.HorizontalAlignment = HorizontalAlignment.Stretch;
                     nb.VerticalAlignment = VerticalAlignment.Stretch;
+                    nb.Content = $"{i}:{j}";
+                    switch (PlayerMatrix[i, j])
+                    {
+                        case 0:
+                            nb.Background = new SolidColorBrush(Colors.Gray);
+                            break;
+                        case 1:
+                            nb.Background = new SolidColorBrush(Colors.Yellow);
+                            break;
+                        case 2:
+                            nb.Background = new SolidColorBrush(Colors.Black);
+                            break;
+                        case 3:
+                            nb.Background = new SolidColorBrush(Colors.Red);
+                            break;
+                        default:
+                            nb.Background = new SolidColorBrush(Colors.Blue);
+                            break;
+                    }
                     Grid.SetRow(nb, i);
                     Grid.SetColumn(nb, j);
                     PlayerSide.Children.Add(nb);
                     PlayerButtons.Add(nb);
-                    switch (PlayerMatrix[i, j])
-                    {
-                        case 0:
-                            nb.Foreground = new SolidColorBrush(Colors.Gray);
-                            break;
-                    }
                 }
             }
         }
@@ -136,21 +157,29 @@ namespace Game
                     Button nb = new();
                     nb.HorizontalAlignment = HorizontalAlignment.Stretch;
                     nb.VerticalAlignment = VerticalAlignment.Stretch;
+                    switch (PlayerMatrix[i, j])
+                    {
+                        case 0:
+                            nb.Background = new SolidColorBrush(Colors.Gray);
+                            break;
+                        case 1:
+                            nb.Background = new SolidColorBrush(Colors.Yellow);
+                            break;  
+                        case 2:
+                            nb.Background = new SolidColorBrush(Colors.Black);
+                            break;
+                        case 3:
+                            nb.Background = new SolidColorBrush(Colors.Red);
+                            break;
+                    }
                     Grid.SetRow(nb, i);
                     Grid.SetColumn(nb, j);
                     PlayerAttacks.Children.Add(nb);
                     PlayerAttacksButtons.Add(nb);
-                    switch (PlayerMatrix[i, j])
-                    {
-                        case 0:
-                            nb.Foreground = new SolidColorBrush(Colors.Gray);
-                            break;
-                    }
                 }
             }
 
         }
-
 
         private void Start()
         {
@@ -159,11 +188,46 @@ namespace Game
             ShowPlayerAttacksMatrix();
         }
 
+        private bool Free(int x, int y)
+        {
+            if (PlayerMatrix[x, y] == 0)
+                return true;
+            else
+                return false;
+        }
+
+        private void Ship5()
+        {
+            int x;
+            int y;
+            do
+            {
+                x = r.Next(1, 10);
+                y = r.Next(1, 10);
+            }
+            while (x < 0);
+            try
+            {
+                //Only downward
+                if(Free(x, y) && Free(x + 1, y) && Free(x + 2, y) && Free(x + 3, y) && Free(x + 4, y) && Free(x - 1, y) && Free(x, y - 1) && Free(x, y + 1) && Free(x + 1, y - 1) && Free(x + 1, y + 1) && Free(x + 2, y - 1) && Free(x + 2, y + 1) && Free(x + 3, y - 1) && Free(x + 3, y + 1) && Free(x + 4, y - 1) && Free(x + 4, y + 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x - 1, y - 1) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x + 1 , y + 1))
+                {
+                    PlayerMatrix[x, y] = 1;
+                    PlayerMatrix[x + 1, y] = 1;
+                    PlayerMatrix[x + 2, y] = 1;
+                    PlayerMatrix[x + 3, y] = 1;
+                    PlayerMatrix[x + 4, y] = 1;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("NO NO");
+            }
+        }
 
         private void Randomize()
         {
-            PlayerButtons[r.Next(0, PlayerButtons.Count)].Foreground = new SolidColorBrush(Colors.Aqua);
-            Console.WriteLine(r.Next(0, PlayerButtons.Count + 1));
+            Ship5();
+            ShowPlayerMatrix();
         }
 
         private void Start(object sender, RoutedEventArgs e)
