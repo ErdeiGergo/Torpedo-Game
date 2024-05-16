@@ -164,7 +164,7 @@ namespace Game
                             break;
                         case 1:
                             nb.Background = new SolidColorBrush(Colors.Yellow);
-                            break;  
+                            break;
                         case 2:
                             nb.Background = new SolidColorBrush(Colors.Black);
                             break;
@@ -200,16 +200,12 @@ namespace Game
         {
             int x;
             int y;
-            do
-            {
-                x = r.Next(1, 10);
-                y = r.Next(1, 10);
-            }
-            while (x < 0);
+            x = r.Next(1, 9);
+            y = r.Next(1, 9);
             try
             {
                 //Only downward
-                if(Free(x, y) && Free(x + 1, y) && Free(x + 2, y) && Free(x + 3, y) && Free(x + 4, y) && Free(x - 1, y) && Free(x, y - 1) && Free(x, y + 1) && Free(x + 1, y - 1) && Free(x + 1, y + 1) && Free(x + 2, y - 1) && Free(x + 2, y + 1) && Free(x + 3, y - 1) && Free(x + 3, y + 1) && Free(x + 4, y - 1) && Free(x + 4, y + 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x - 1, y - 1) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x + 1 , y + 1))
+                if (Free(x, y) && Free(x + 1, y) && Free(x + 2, y) && Free(x + 3, y) && Free(x + 4, y) && Free(x - 1, y) && Free(x + 5, y) && Free(x, y - 1) && Free(x, y + 1) && Free(x + 1, y - 1) && Free(x + 1, y + 1) && Free(x + 2, y - 1) && Free(x + 2, y + 1) && Free(x + 3, y - 1) && Free(x + 3, y + 1) && Free(x + 4, y - 1) && Free(x + 4, y + 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x - 1, y - 1) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x + 1, y + 1) && Free(x + 5, y + 1) && Free(x + 5, y - 1))
                 {
                     PlayerMatrix[x, y] = 1;
                     PlayerMatrix[x + 1, y] = 1;
@@ -220,7 +216,53 @@ namespace Game
             }
             catch (Exception e)
             {
-                MessageBox.Show("NO NO");
+                try
+                {
+                    //Only rightward
+                    if (Free(x, y) && Free(x, y + 1) && Free(x, y + 2) && Free(x, y + 3) && Free(x, y + 4) && Free(x - 1, y - 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x - 1, y + 2) && Free(x - 1, y + 3) && Free(x - 1, y + 4) && Free(x - 1, y + 5) && Free(x, y - 1) && Free(x, y + 5) && Free(x + 1, y - 1) && Free(x + 1, y) && Free(x + 1, y + 1) && Free(x + 1, y + 2) && Free(x + 1, y + 3) && Free(x + 1, y + 4) && Free(x + 1, y + 5))
+                    {
+                        PlayerMatrix[x, y] = 1;
+                        PlayerMatrix[x, y + 1] = 1;
+                        PlayerMatrix[x, y + 2] = 1;
+                        PlayerMatrix[x, y + 3] = 1;
+                        PlayerMatrix[x, y + 4] = 1;
+                    }
+                }
+                catch (Exception e2)
+                {
+                    try
+                    {
+                        // Only leftward
+                        if (Free(x, y) && Free(x, y - 1) && Free(x, y - 2) && Free(x, y - 3) && Free(x, y - 4) && Free(x - 1, y + 1) && Free(x - 1, y) && Free(x - 1, y - 1) && Free(x - 1, y - 2) && Free(x - 1, y - 3) && Free(x - 1, y - 4) && Free(x - 1, y - 5) && Free(x, y - 5) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x + 1, y - 2) && Free(x + 1, y - 3) && Free(x + 1, y - 4) && Free(x + 1, y - 5))
+                        {
+                            PlayerMatrix[x, y] = 1;
+                            PlayerMatrix[x, y - 1] = 1;
+                            PlayerMatrix[x, y - 2] = 1;
+                            PlayerMatrix[x, y - 3] = 1;
+                            PlayerMatrix[x, y - 4] = 1;
+                        }
+                    }
+                    catch (Exception e3)
+                    {
+                        try
+                        {
+                            //Only upward
+                            if (Free(x, y) && Free(x - 1, y) && Free(x - 2, y) && Free(x - 3, y) && Free(x - 4, y) && Free(x - 1, y - 1) && Free(x, y - 1) && Free(x + 1, y - 1) && Free(x + 2, y - 1) && Free(x + 3, y - 1) && Free(x + 4, y - 1) && Free(x + 5, y - 1) && Free(x, y - 1) && Free(x, y + 5) && Free(x - 1, y + 1) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 2, y + 1) && Free(x + 3, y + 1) && Free(x + 4, y + 1) && Free(x + 5, y + 1))
+                            {
+                                PlayerMatrix[x, y] = 1;
+                                PlayerMatrix[x - 1, y] = 1;
+                                PlayerMatrix[x - 2, y] = 1;
+                                PlayerMatrix[x - 3, y] = 1;
+                                PlayerMatrix[x - 4, y] = 1;
+                            }
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
+                }
+
             }
         }
 
@@ -239,6 +281,6 @@ namespace Game
         {
             Randomize();
         }
-        
+
     }
 }

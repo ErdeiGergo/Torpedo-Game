@@ -19,3 +19,24 @@ C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0
 C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game.pdb
 C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game.genruntimeconfig.cache
 C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\ref\Game.dll
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\bin\Debug\net7.0-windows\Game.exe
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\bin\Debug\net7.0-windows\Game.deps.json
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\bin\Debug\net7.0-windows\Game.runtimeconfig.json
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\bin\Debug\net7.0-windows\Game.dll
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\bin\Debug\net7.0-windows\Game.pdb
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.csproj.AssemblyReference.cache
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game_MarkupCompile.cache
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game_MarkupCompile.lref
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\MainWindow.baml
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.g.resources
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.AssemblyInfoInputs.cache
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.AssemblyInfo.cs
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.csproj.CoreCompileInputs.cache
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.dll
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\refint\Game.dll
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.pdb
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.genruntimeconfig.cache
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\ref\Game.dll
