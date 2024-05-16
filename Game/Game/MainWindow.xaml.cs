@@ -157,7 +157,8 @@ namespace Game
                     Button nb = new();
                     nb.HorizontalAlignment = HorizontalAlignment.Stretch;
                     nb.VerticalAlignment = VerticalAlignment.Stretch;
-                    switch (PlayerMatrix[i, j])
+                    nb.Click += Attack;
+                    switch (PlayerAttacksMatrix[i, j])
                     {
                         case 0:
                             nb.Background = new SolidColorBrush(Colors.Gray);
@@ -514,6 +515,15 @@ namespace Game
             Ship1();
             Ship1();
             ShowPlayerMatrix();
+        }
+
+        private void Attack(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            int attackRow = Grid.GetRow(b);
+            int attackColumn = Grid.GetColumn(b);
+            PlayerAttacksMatrix[attackRow, attackColumn] = 2;
+            ShowPlayerAttacksMatrix();
         }
 
         private void Start(object sender, RoutedEventArgs e)
