@@ -178,7 +178,6 @@ namespace Game
                     PlayerAttacksButtons.Add(nb);
                 }
             }
-
         }
 
         private void Start()
@@ -214,7 +213,7 @@ namespace Game
                     PlayerMatrix[x + 4, y] = 1;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 try
                 {
@@ -228,7 +227,7 @@ namespace Game
                         PlayerMatrix[x, y + 4] = 1;
                     }
                 }
-                catch (Exception e2)
+                catch (Exception)
                 {
                     try
                     {
@@ -242,7 +241,7 @@ namespace Game
                             PlayerMatrix[x, y - 4] = 1;
                         }
                     }
-                    catch (Exception e3)
+                    catch (Exception)
                     {
                         try
                         {
@@ -266,9 +265,39 @@ namespace Game
             }
         }
 
+        private void Ship4()
+        {
+            bool stop = false;
+            int x;
+            int y;
+            do
+            {
+                x = r.Next(1, 9);
+                y = r.Next(1, 9);
+                try
+                {
+                    // Only downward
+                    if (Free(x, y) && Free(x + 1, y) && Free(x + 2, y) && Free(x + 3, y) && Free(x - 1, y - 1) && Free(x, y - 1) && Free(x + 1, y - 1) && Free(x + 2, y - 1) && Free(x + 3, y - 1) && Free(x, y - 1) && Free(x, y + 4) && Free(x - 1, y + 1) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 2, y + 1) && Free(x + 3, y + 1))
+                    {
+                        PlayerMatrix[x, y] = 1;
+                        PlayerMatrix[x + 1, y] = 1;
+                        PlayerMatrix[x + 2, y] = 1;
+                        PlayerMatrix[x + 3, y] = 1;
+                        stop = true;
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            while (!stop);
+        }
+
         private void Randomize()
         {
             Ship5();
+            Ship4();
             ShowPlayerMatrix();
         }
 
