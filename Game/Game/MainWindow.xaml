@@ -15,7 +15,7 @@
 
         <StackPanel>
             <Button Height="40" Content="Start" Margin="10" Click="Start"/>
-            <Button Height="40" Content="Randomize" Margin="10" Click="Button_Click"/>
+            <Button Height="40" Content="Randomize" Margin="10" Click="RandomButton"/>
         </StackPanel>
 
         <Grid Grid.Column="1">

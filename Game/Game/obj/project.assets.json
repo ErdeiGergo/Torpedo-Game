@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erdei.gergo.janos\\Documents\\Erdei Gergő\\V\\Game\\Game\\Game.csproj",
+      "projectUniqueName": "C:\\11.F\\Erdei Gergő\\IKT\\kik\\Game\\Game\\Game.csproj",
       "projectName": "Game",
-      "projectPath": "C:\\Users\\erdei.gergo.janos\\Documents\\Erdei Gergő\\V\\Game\\Game\\Game.csproj",
+      "projectPath": "C:\\11.F\\Erdei Gergő\\IKT\\kik\\Game\\Game\\Game.csproj",
       "packagesPath": "C:\\Users\\erdei.gergo.janos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erdei.gergo.janos\\Documents\\Erdei Gergő\\V\\Game\\Game\\obj\\",
+      "outputPath": "C:\\11.F\\Erdei Gergő\\IKT\\kik\\Game\\Game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erdei.gergo.janos\\AppData\\Roaming\\NuGet\\NuGet.Config",

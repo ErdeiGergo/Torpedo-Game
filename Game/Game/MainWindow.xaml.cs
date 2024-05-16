@@ -121,7 +121,7 @@ namespace Game
                     Button nb = new();
                     nb.HorizontalAlignment = HorizontalAlignment.Stretch;
                     nb.VerticalAlignment = VerticalAlignment.Stretch;
-                    nb.Content = $"{i}:{j}";
+                    //nb.Content = $"{i}:{j}";
                     switch (PlayerMatrix[i, j])
                     {
                         case 0:
@@ -350,7 +350,7 @@ namespace Game
                 try
                 {
                     // Only downward
-                    if (Free(x, y) && Free(x + 1, y) && Free(x + 2, y) && Free(x - 1, y - 1) && Free(x, y - 1) && Free(x + 1, y - 1) && Free(x + 2, y - 1) && Free(x + 3, y - 1) && Free(x, y - 1) && Free(x + 3, y) && Free(x - 1, y + 1) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 2, y + 1) && Free(x + 3, y + 1))
+                    if (Free(x, y) && Free(x + 1, y) && Free(x + 2, y) && Free(x - 1, y - 1) && Free(x, y - 1) && Free(x + 1, y - 1) && Free(x + 2, y - 1) && Free(x + 3, y - 1) && Free(x - 1, y) && Free(x + 3, y) && Free(x - 1, y + 1) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 2, y + 1) && Free(x + 3, y + 1))
                     {
                         PlayerMatrix[x, y] = 1;
                         PlayerMatrix[x + 1, y] = 1;
@@ -389,7 +389,7 @@ namespace Game
                             try
                             {
                                 //Only upward
-                                if (Free(x, y) && Free(x - 1, y) && Free(x - 2, y) && Free(x - 1, y - 1) && Free(x, y - 1) && Free(x + 1, y - 1) && Free(x + 2, y - 1) && Free(x + 3, y - 1) && Free(x - 1, y) && Free(x + 3, y) && Free(x - 1, y + 1) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 2, y + 1) && Free(x + 3, y + 1))
+                                if (Free(x, y) && Free(x + 1, y) && Free(x + 2, y) && Free(x + 1, y - 1) && Free(x, y - 1) && Free(x - 1, y - 1) && Free(x - 2, y - 1) && Free(x - 3, y - 1) && Free(x + 1, y) && Free(x - 3, y) && Free(x + 1, y + 1) && Free(x, y + 1) && Free(x - 1, y + 1) && Free(x - 2, y + 1) && Free(x - 3, y + 1))
                                 {
                                     PlayerMatrix[x, y] = 1;
                                     PlayerMatrix[x - 1, y] = 1;
@@ -409,12 +409,110 @@ namespace Game
             while (!stop);
         }
 
-    private void Randomize()
+        private void Ship2()
+        {
+            bool stop = false;
+            int x;
+            int y;
+            do
+            {
+                x = r.Next(1, 9);
+                y = r.Next(1, 9);
+                try
+                {
+                    // Only downward
+                    if (Free(x, y) && Free(x + 1, y) && Free(x - 1, y - 1) && Free(x, y - 1) && Free(x + 1, y - 1) && Free(x + 2, y - 1) && Free(x - 1, y) && Free(x + 2, y) && Free(x - 1, y + 1) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 2, y + 1))
+                    {
+                        PlayerMatrix[x, y] = 1;
+                        PlayerMatrix[x + 1, y] = 1;
+                        stop = true;
+                    }
+                }
+                catch (Exception)
+                {
+                    try
+                    {
+                        //Only rightward
+                        if (Free(x, y) && Free(x, y + 1) && Free(x - 1, y - 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x - 1, y + 2) && Free(x, y - 1) && Free(x, y + 2) && Free(x + 1, y - 1) && Free(x + 1, y) && Free(x + 1, y + 1) && Free(x + 1, y + 2))
+                        {
+                            PlayerMatrix[x, y] = 1;
+                            PlayerMatrix[x, y + 1] = 1;
+                            stop = true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        try
+                        {
+                            // Only leftward
+                            if (Free(x, y) && Free(x, y - 1) && Free(x - 1, y + 1) && Free(x - 1, y) && Free(x - 1, y - 1) && Free(x - 1, y - 2) && Free(x, y - 2) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x + 1, y - 2))
+                            {
+                                PlayerMatrix[x, y] = 1;
+                                PlayerMatrix[x, y - 1] = 1;
+                                stop = true;
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            try
+                            {
+                                //Only upward
+                                if (Free(x, y) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x, y - 1) && Free(x - 1, y - 1) && Free(x - 2, y - 1) && Free(x + 1, y) && Free(x - 2, y) && Free(x + 1, y + 1) && Free(x, y + 1) && Free(x - 1, y + 1) && Free(x - 2, y + 1))
+                                {
+                                    PlayerMatrix[x, y] = 1;
+                                    PlayerMatrix[x - 1, y] = 1;
+                                    PlayerMatrix[x - 2, y] = 1;
+                                    PlayerMatrix[x - 3, y] = 1;
+                                    stop = true;
+                                }
+                            }
+                            catch (Exception)
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
+            while (!stop);
+        }
+
+        private void Ship1()
+        {
+            bool stop = false;
+            int x;
+            int y;
+            do
+            {
+                x = r.Next(1, 9);
+                y = r.Next(1, 9);
+                try
+                {
+                    // It is only a dot and the neighbours of it
+                    if (Free(x, y) && Free(x - 1, y - 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x, y - 1) && Free(x, y + 1) && Free(x + 1, y - 1) && Free(x + 1, y) && Free(x + 1, y + 1))
+                    {
+                        PlayerMatrix[x, y] = 1;
+                        stop = true;
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            while (!stop);
+        }
+
+        private void Randomize()
         {
             Start();
             Ship5();
             Ship4();
             Ship3();
+            Ship2();
+            Ship2();
+            Ship1();
+            Ship1();
             ShowPlayerMatrix();
         }
 
@@ -423,7 +521,7 @@ namespace Game
             Start();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void RandomButton(object sender, RoutedEventArgs e)
         {
             Randomize();
         }
