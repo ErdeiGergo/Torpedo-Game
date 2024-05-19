@@ -22,6 +22,7 @@ namespace Game
     {
         int[,] PlayerMatrix = new int[10, 10];
         int[,] PlayerAttacksMatrix = new int[10, 10];
+        int[,] EnemyMatrix = new int[10, 10];
         List<Button> PlayerButtons = new();
         List<Button> PlayerAttacksButtons = new();
         Random r = new();
@@ -108,6 +109,9 @@ namespace Game
 
                     //Player's attacks
                     PlayerAttacksMatrix[i, j] = 0;
+
+                    //Enemy table
+                    EnemyMatrix[i, j] = 0;
                 }
             }
         }
@@ -188,15 +192,15 @@ namespace Game
             ShowPlayerAttacksMatrix();
         }
 
-        private bool Free(int x, int y)
+        private bool Free(int x, int y, int[,] matrix)
         {
-            if (PlayerMatrix[x, y] == 0)
+            if (matrix[x, y] == 0)
                 return true;
             else
                 return false;
         }
 
-        private void Ship5()
+        private void Ship5(int[,] matrix)
         {
             int x;
             int y;
@@ -205,13 +209,13 @@ namespace Game
             try
             {
                 //Only downward
-                if (Free(x, y) && Free(x + 1, y) && Free(x + 2, y) && Free(x + 3, y) && Free(x + 4, y) && Free(x - 1, y) && Free(x + 5, y) && Free(x, y - 1) && Free(x, y + 1) && Free(x + 1, y - 1) && Free(x + 1, y + 1) && Free(x + 2, y - 1) && Free(x + 2, y + 1) && Free(x + 3, y - 1) && Free(x + 3, y + 1) && Free(x + 4, y - 1) && Free(x + 4, y + 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x - 1, y - 1) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x + 1, y + 1) && Free(x + 5, y + 1) && Free(x + 5, y - 1))
+                if (Free(x, y, matrix) && Free(x + 1, y, matrix) && Free(x + 2, y, matrix) && Free(x + 3, y, matrix) && Free(x + 4, y, matrix) && Free(x - 1, y, matrix) && Free(x + 5, y, matrix) && Free(x, y - 1, matrix) && Free(x, y + 1, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 2, y - 1, matrix) && Free(x + 2, y + 1, matrix) && Free(x + 3, y - 1, matrix) && Free(x + 3, y + 1, matrix) && Free(x + 4, y - 1, matrix) && Free(x + 4, y + 1, matrix) && Free(x - 1, y, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 1, y - 1, matrix) && Free(x + 1, y, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 5, y + 1, matrix) && Free(x + 5, y - 1, matrix))
                 {
-                    PlayerMatrix[x, y] = 1;
-                    PlayerMatrix[x + 1, y] = 1;
-                    PlayerMatrix[x + 2, y] = 1;
-                    PlayerMatrix[x + 3, y] = 1;
-                    PlayerMatrix[x + 4, y] = 1;
+                    matrix[x, y] = 1;
+                    matrix[x + 1, y] = 1;
+                    matrix[x + 2, y] = 1;
+					matrix[x + 3, y] = 1;
+					matrix[x + 4, y] = 1;
                 }
             }
             catch (Exception)
@@ -219,13 +223,13 @@ namespace Game
                 try
                 {
                     //Only rightward
-                    if (Free(x, y) && Free(x, y + 1) && Free(x, y + 2) && Free(x, y + 3) && Free(x, y + 4) && Free(x - 1, y - 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x - 1, y + 2) && Free(x - 1, y + 3) && Free(x - 1, y + 4) && Free(x - 1, y + 5) && Free(x, y - 1) && Free(x, y + 5) && Free(x + 1, y - 1) && Free(x + 1, y) && Free(x + 1, y + 1) && Free(x + 1, y + 2) && Free(x + 1, y + 3) && Free(x + 1, y + 4) && Free(x + 1, y + 5))
+                    if (Free(x, y, matrix) && Free(x, y + 1, matrix) && Free(x, y + 2, matrix) && Free(x, y + 3, matrix) && Free(x, y + 4, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 1, y, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 1, y + 2, matrix) && Free(x - 1, y + 3, matrix) && Free(x - 1, y + 4, matrix) && Free(x - 1, y + 5, matrix) && Free(x, y - 1, matrix) && Free(x, y + 5, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 1, y, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 1, y + 2, matrix) && Free(x + 1, y + 3, matrix) && Free(x + 1, y + 4, matrix) && Free(x + 1, y + 5, matrix))
                     {
-                        PlayerMatrix[x, y] = 1;
-                        PlayerMatrix[x, y + 1] = 1;
-                        PlayerMatrix[x, y + 2] = 1;
-                        PlayerMatrix[x, y + 3] = 1;
-                        PlayerMatrix[x, y + 4] = 1;
+						matrix[x, y] = 1;
+						matrix[x, y + 1] = 1;
+						matrix[x, y + 2] = 1;
+						matrix[x, y + 3] = 1;
+						matrix[x, y + 4] = 1;
                     }
                 }
                 catch (Exception)
@@ -233,13 +237,13 @@ namespace Game
                     try
                     {
                         // Only leftward
-                        if (Free(x, y) && Free(x, y - 1) && Free(x, y - 2) && Free(x, y - 3) && Free(x, y - 4) && Free(x - 1, y + 1) && Free(x - 1, y) && Free(x - 1, y - 1) && Free(x - 1, y - 2) && Free(x - 1, y - 3) && Free(x - 1, y - 4) && Free(x - 1, y - 5) && Free(x, y - 5) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x + 1, y - 2) && Free(x + 1, y - 3) && Free(x + 1, y - 4) && Free(x + 1, y - 5))
+                        if (Free(x, y, matrix) && Free(x, y - 1, matrix) && Free(x, y - 2, matrix) && Free(x, y - 3, matrix) && Free(x, y - 4, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 1, y, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 1, y - 2, matrix) && Free(x - 1, y - 3, matrix) && Free(x - 1, y - 4, matrix) && Free(x - 1, y - 5, matrix) && Free(x, y - 5, matrix) && Free(x, y + 1, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 1, y, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 1, y - 2, matrix) && Free(x + 1, y - 3, matrix) && Free(x + 1, y - 4, matrix) && Free(x + 1, y - 5, matrix))
                         {
-                            PlayerMatrix[x, y] = 1;
-                            PlayerMatrix[x, y - 1] = 1;
-                            PlayerMatrix[x, y - 2] = 1;
-                            PlayerMatrix[x, y - 3] = 1;
-                            PlayerMatrix[x, y - 4] = 1;
+							matrix[x, y] = 1;
+							matrix[x, y - 1] = 1;
+							matrix[x, y - 2] = 1;
+							matrix[x, y - 3] = 1;
+							matrix[x, y - 4] = 1;
                         }
                     }
                     catch (Exception)
@@ -247,13 +251,13 @@ namespace Game
                         try
                         {
                             //Only upward
-                            if (Free(x, y) && Free(x - 1, y) && Free(x - 2, y) && Free(x - 3, y) && Free(x - 4, y) && Free(x - 1, y - 1) && Free(x, y - 1) && Free(x + 1, y - 1) && Free(x + 2, y - 1) && Free(x + 3, y - 1) && Free(x + 4, y - 1) && Free(x + 5, y - 1) && Free(x, y - 1) && Free(x, y + 5) && Free(x - 1, y + 1) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 2, y + 1) && Free(x + 3, y + 1) && Free(x + 4, y + 1) && Free(x + 5, y + 1))
+                            if (Free(x, y, matrix) && Free(x - 1, y, matrix) && Free(x - 2, y, matrix) && Free(x - 3, y, matrix) && Free(x - 4, y, matrix) && Free(x - 1, y - 1, matrix) && Free(x, y - 1, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 2, y - 1, matrix) && Free(x + 3, y - 1, matrix) && Free(x + 4, y - 1, matrix) && Free(x + 5, y - 1, matrix) && Free(x, y - 1, matrix) && Free(x, y + 5, matrix) && Free(x - 1, y + 1, matrix) && Free(x, y + 1, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 2, y + 1, matrix) && Free(x + 3, y + 1, matrix) && Free(x + 4, y + 1, matrix) && Free(x + 5, y + 1, matrix))
                             {
-                                PlayerMatrix[x, y] = 1;
-                                PlayerMatrix[x - 1, y] = 1;
-                                PlayerMatrix[x - 2, y] = 1;
-                                PlayerMatrix[x - 3, y] = 1;
-                                PlayerMatrix[x - 4, y] = 1;
+								matrix[x, y] = 1;
+								matrix[x - 1, y] = 1;
+								matrix[x - 2, y] = 1;
+								matrix[x - 3, y] = 1;
+								matrix[x - 4, y] = 1;
                             }
                         }
                         catch (Exception)
@@ -265,7 +269,7 @@ namespace Game
             }
         }
 
-        private void Ship4()
+        private void Ship4(int[,] matrix)
         {
             bool stop = false;
             int x;
@@ -277,12 +281,12 @@ namespace Game
                 try
                 {
                     // Only downward
-                    if (Free(x, y) && Free(x + 1, y) && Free(x + 2, y) && Free(x + 3, y) && Free(x - 1, y - 1) && Free(x, y - 1) && Free(x + 1, y - 1) && Free(x + 2, y - 1) && Free(x + 3, y - 1) && Free(x + 4, y - 1) && Free(x - 1, y) && Free(x + 4, y) && Free(x - 1, y + 1) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 2, y + 1) && Free(x + 3, y + 1) && Free(x + 4, y + 1))
+                    if (Free(x, y, matrix) && Free(x + 1, y, matrix) && Free(x + 2, y, matrix) && Free(x + 3, y, matrix) && Free(x - 1, y - 1, matrix) && Free(x, y - 1, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 2, y - 1, matrix) && Free(x + 3, y - 1, matrix) && Free(x + 4, y - 1, matrix) && Free(x - 1, y, matrix) && Free(x + 4, y, matrix) && Free(x - 1, y + 1, matrix) && Free(x, y + 1, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 2, y + 1, matrix) && Free(x + 3, y + 1, matrix) && Free(x + 4, y + 1, matrix))
                     {
-                        PlayerMatrix[x, y] = 1;
-                        PlayerMatrix[x + 1, y] = 1;
-                        PlayerMatrix[x + 2, y] = 1;
-                        PlayerMatrix[x + 3, y] = 1;
+						matrix[x, y] = 1;
+						matrix[x + 1, y] = 1;
+						matrix[x + 2, y] = 1;
+						matrix[x + 3, y] = 1;
                         stop = true;
                     }
                 }
@@ -291,12 +295,12 @@ namespace Game
                     try
                     {
                         //Only rightward
-                        if (Free(x, y) && Free(x, y + 1) && Free(x, y + 2) && Free(x, y + 3) && Free(x - 1, y - 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x - 1, y + 2) && Free(x - 1, y + 3) && Free(x - 1, y + 4) && Free(x, y - 1) && Free(x, y + 4) && Free(x + 1, y - 1) && Free(x + 1, y) && Free(x + 1, y + 1) && Free(x + 1, y + 2) && Free(x + 1, y + 3) && Free(x + 1, y + 4))
+                        if (Free(x, y, matrix) && Free(x, y + 1, matrix) && Free(x, y + 2, matrix) && Free(x, y + 3, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 1, y, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 1, y + 2, matrix) && Free(x - 1, y + 3, matrix) && Free(x - 1, y + 4, matrix) && Free(x, y - 1, matrix) && Free(x, y + 4, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 1, y, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 1, y + 2, matrix) && Free(x + 1, y + 3, matrix) && Free(x + 1, y + 4, matrix))
                         {
-                            PlayerMatrix[x, y] = 1;
-                            PlayerMatrix[x, y + 1] = 1;
-                            PlayerMatrix[x, y + 2] = 1;
-                            PlayerMatrix[x, y + 3] = 1;
+							matrix[x, y] = 1;
+							matrix[x, y + 1] = 1;
+							matrix[x, y + 2] = 1;
+							matrix[x, y + 3] = 1;
                             stop = true;
                         }
                     }
@@ -305,12 +309,12 @@ namespace Game
                         try
                         {
                             // Only leftward
-                            if (Free(x, y) && Free(x, y - 1) && Free(x, y - 2) && Free(x, y - 3) && Free(x - 1, y + 1) && Free(x - 1, y) && Free(x - 1, y - 1) && Free(x - 1, y - 2) && Free(x - 1, y - 3) && Free(x - 1, y - 4) && Free(x, y - 4) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x + 1, y - 2) && Free(x + 1, y - 3) && Free(x + 1, y - 4))
+                            if (Free(x, y, matrix) && Free(x, y - 1, matrix) && Free(x, y - 2, matrix) && Free(x, y - 3, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 1, y, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 1, y - 2, matrix) && Free(x - 1, y - 3, matrix) && Free(x - 1, y - 4, matrix) && Free(x, y - 4, matrix) && Free(x, y + 1, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 1, y, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 1, y - 2, matrix) && Free(x + 1, y - 3, matrix) && Free(x + 1, y - 4, matrix))
                             {
-                                PlayerMatrix[x, y] = 1;
-                                PlayerMatrix[x, y - 1] = 1;
-                                PlayerMatrix[x, y - 2] = 1;
-                                PlayerMatrix[x, y - 3] = 1;
+								matrix[x, y] = 1;
+								matrix[x, y - 1] = 1;
+								matrix[x, y - 2] = 1;
+								matrix[x, y - 3] = 1;
                                 stop = true;
                             }
                         }
@@ -319,12 +323,12 @@ namespace Game
                             try
                             {
                                 //Only upward
-                                if (Free(x, y) && Free(x - 1, y) && Free(x - 2, y) && Free(x - 3, y) && Free(x + 1, y - 1) && Free(x, y - 1) && Free(x - 1, y - 1) && Free(x - 2, y - 1) && Free(x - 3, y - 1) && Free(x - 4, y - 1) && Free(x + 5, y) && Free(x - 4, y) && Free(x + 1, y + 1) && Free(x, y + 1) && Free(x - 1, y + 1) && Free(x - 2, y + 1) && Free(x - 3, y + 1) && Free(x - 4, y + 1))
+                                if (Free(x, y, matrix) && Free(x - 1, y, matrix) && Free(x - 2, y, matrix) && Free(x - 3, y, matrix) && Free(x + 1, y - 1, matrix) && Free(x, y - 1, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 2, y - 1, matrix) && Free(x - 3, y - 1, matrix) && Free(x - 4, y - 1, matrix) && Free(x + 5, y, matrix) && Free(x - 4, y, matrix) && Free(x + 1, y + 1, matrix) && Free(x, y + 1, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 2, y + 1, matrix) && Free(x - 3, y + 1, matrix) && Free(x - 4, y + 1, matrix))
                                 {
-                                    PlayerMatrix[x, y] = 1;
-                                    PlayerMatrix[x - 1, y] = 1;
-                                    PlayerMatrix[x - 2, y] = 1;
-                                    PlayerMatrix[x - 3, y] = 1;
+									matrix[x, y] = 1;
+									matrix[x - 1, y] = 1;
+									matrix[x - 2, y] = 1;
+									matrix[x - 3, y] = 1;
                                     stop = true;
                                 }
                             }
@@ -339,7 +343,7 @@ namespace Game
             while (!stop);
         }
 
-        private void Ship3()
+        private void Ship3(int[,] matrix)
         {
             bool stop = false;
             int x;
@@ -351,11 +355,11 @@ namespace Game
                 try
                 {
                     // Only downward
-                    if (Free(x, y) && Free(x + 1, y) && Free(x + 2, y) && Free(x - 1, y - 1) && Free(x, y - 1) && Free(x + 1, y - 1) && Free(x + 2, y - 1) && Free(x + 3, y - 1) && Free(x - 1, y) && Free(x + 3, y) && Free(x - 1, y + 1) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 2, y + 1) && Free(x + 3, y + 1))
+                    if (Free(x, y, matrix) && Free(x + 1, y, matrix) && Free(x + 2, y, matrix) && Free(x - 1, y - 1, matrix) && Free(x, y - 1, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 2, y - 1, matrix) && Free(x + 3, y - 1, matrix) && Free(x - 1, y, matrix) && Free(x + 3, y, matrix) && Free(x - 1, y + 1, matrix) && Free(x, y + 1, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 2, y + 1, matrix) && Free(x + 3, y + 1, matrix))
                     {
-                        PlayerMatrix[x, y] = 1;
-                        PlayerMatrix[x + 1, y] = 1;
-                        PlayerMatrix[x + 2, y] = 1;
+						matrix[x, y] = 1;
+						matrix[x + 1, y] = 1;
+						matrix[x + 2, y] = 1;
                         stop = true;
                     }
                 }
@@ -364,11 +368,11 @@ namespace Game
                     try
                     {
                         //Only rightward
-                        if (Free(x, y) && Free(x, y + 1) && Free(x, y + 2) && Free(x, y + 3) && Free(x - 1, y - 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x - 1, y + 2) && Free(x - 1, y + 3) && Free(x, y - 1) && Free(x, y + 3) && Free(x + 1, y - 1) && Free(x + 1, y) && Free(x + 1, y + 1) && Free(x + 1, y + 2) && Free(x + 1, y + 3))
+                        if (Free(x, y, matrix) && Free(x, y + 1, matrix) && Free(x, y + 2, matrix) && Free(x, y + 3, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 1, y, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 1, y + 2, matrix) && Free(x - 1, y + 3, matrix) && Free(x, y - 1, matrix) && Free(x, y + 3, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 1, y, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 1, y + 2, matrix) && Free(x + 1, y + 3, matrix))
                         {
-                            PlayerMatrix[x, y] = 1;
-                            PlayerMatrix[x, y + 1] = 1;
-                            PlayerMatrix[x, y + 2] = 1;
+							matrix[x, y] = 1;
+							matrix[x, y + 1] = 1;
+							matrix[x, y + 2] = 1;
                             stop = true;
                         }
                     }
@@ -377,11 +381,11 @@ namespace Game
                         try
                         {
                             // Only leftward
-                            if (Free(x, y) && Free(x, y - 1) && Free(x, y - 2) && Free(x - 1, y + 1) && Free(x - 1, y) && Free(x - 1, y - 1) && Free(x - 1, y - 2) && Free(x - 1, y - 3) && Free(x, y - 3) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x + 1, y - 2) && Free(x + 1, y - 3))
+                            if (Free(x, y, matrix) && Free(x, y - 1, matrix) && Free(x, y - 2, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 1, y, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 1, y - 2, matrix) && Free(x - 1, y - 3, matrix) && Free(x, y - 3, matrix) && Free(x, y + 1, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 1, y, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 1, y - 2, matrix) && Free(x + 1, y - 3, matrix))
                             {
-                                PlayerMatrix[x, y] = 1;
-                                PlayerMatrix[x, y - 1] = 1;
-                                PlayerMatrix[x, y - 2] = 1;
+								matrix[x, y] = 1;
+								matrix[x, y - 1] = 1;
+								matrix[x, y - 2] = 1;
                                 stop = true;
                             }
                         }
@@ -390,12 +394,11 @@ namespace Game
                             try
                             {
                                 //Only upward
-                                if (Free(x, y) && Free(x + 1, y) && Free(x + 2, y) && Free(x + 1, y - 1) && Free(x, y - 1) && Free(x - 1, y - 1) && Free(x - 2, y - 1) && Free(x - 3, y - 1) && Free(x + 1, y) && Free(x - 3, y) && Free(x + 1, y + 1) && Free(x, y + 1) && Free(x - 1, y + 1) && Free(x - 2, y + 1) && Free(x - 3, y + 1))
+                                if (Free(x, y, matrix) && Free(x + 1, y, matrix) && Free(x + 2, y, matrix) && Free(x + 1, y - 1, matrix) && Free(x, y - 1, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 2, y - 1, matrix) && Free(x - 3, y - 1, matrix) && Free(x + 1, y, matrix) && Free(x - 3, y, matrix) && Free(x + 1, y + 1, matrix) && Free(x, y + 1, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 2, y + 1, matrix) && Free(x - 3, y + 1, matrix))
                                 {
-                                    PlayerMatrix[x, y] = 1;
-                                    PlayerMatrix[x - 1, y] = 1;
-                                    PlayerMatrix[x - 2, y] = 1;
-                                    PlayerMatrix[x - 3, y] = 1;
+									matrix[x, y] = 1;
+									matrix[x - 1, y] = 1;
+									matrix[x - 2, y] = 1;
                                     stop = true;
                                 }
                             }
@@ -410,7 +413,7 @@ namespace Game
             while (!stop);
         }
 
-        private void Ship2()
+        private void Ship2(int[,] matrix)
         {
             bool stop = false;
             int x;
@@ -422,10 +425,10 @@ namespace Game
                 try
                 {
                     // Only downward
-                    if (Free(x, y) && Free(x + 1, y) && Free(x - 1, y - 1) && Free(x, y - 1) && Free(x + 1, y - 1) && Free(x + 2, y - 1) && Free(x - 1, y) && Free(x + 2, y) && Free(x - 1, y + 1) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 2, y + 1))
+                    if (Free(x, y, matrix) && Free(x + 1, y, matrix) && Free(x - 1, y - 1, matrix) && Free(x, y - 1, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 2, y - 1, matrix) && Free(x - 1, y, matrix) && Free(x + 2, y, matrix) && Free(x - 1, y + 1, matrix) && Free(x, y + 1, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 2, y + 1, matrix))
                     {
-                        PlayerMatrix[x, y] = 1;
-                        PlayerMatrix[x + 1, y] = 1;
+						matrix[x, y] = 1;
+						matrix[x + 1, y] = 1;
                         stop = true;
                     }
                 }
@@ -434,10 +437,10 @@ namespace Game
                     try
                     {
                         //Only rightward
-                        if (Free(x, y) && Free(x, y + 1) && Free(x - 1, y - 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x - 1, y + 2) && Free(x, y - 1) && Free(x, y + 2) && Free(x + 1, y - 1) && Free(x + 1, y) && Free(x + 1, y + 1) && Free(x + 1, y + 2))
+                        if (Free(x, y, matrix) && Free(x, y + 1, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 1, y, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 1, y + 2, matrix) && Free(x, y - 1, matrix) && Free(x, y + 2, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 1, y, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 1, y + 2, matrix))
                         {
-                            PlayerMatrix[x, y] = 1;
-                            PlayerMatrix[x, y + 1] = 1;
+							matrix[x, y] = 1;
+							matrix[x, y + 1] = 1;
                             stop = true;
                         }
                     }
@@ -446,10 +449,10 @@ namespace Game
                         try
                         {
                             // Only leftward
-                            if (Free(x, y) && Free(x, y - 1) && Free(x - 1, y + 1) && Free(x - 1, y) && Free(x - 1, y - 1) && Free(x - 1, y - 2) && Free(x, y - 2) && Free(x, y + 1) && Free(x + 1, y + 1) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x + 1, y - 2))
+                            if (Free(x, y, matrix) && Free(x, y - 1, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 1, y, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 1, y - 2, matrix) && Free(x, y - 2, matrix) && Free(x, y + 1, matrix) && Free(x + 1, y + 1, matrix) && Free(x + 1, y, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 1, y - 2, matrix))
                             {
-                                PlayerMatrix[x, y] = 1;
-                                PlayerMatrix[x, y - 1] = 1;
+								matrix[x, y] = 1;
+								matrix[x, y - 1] = 1;
                                 stop = true;
                             }
                         }
@@ -458,12 +461,10 @@ namespace Game
                             try
                             {
                                 //Only upward
-                                if (Free(x, y) && Free(x + 1, y) && Free(x + 1, y - 1) && Free(x, y - 1) && Free(x - 1, y - 1) && Free(x - 2, y - 1) && Free(x + 1, y) && Free(x - 2, y) && Free(x + 1, y + 1) && Free(x, y + 1) && Free(x - 1, y + 1) && Free(x - 2, y + 1))
+                                if (Free(x, y, matrix) && Free(x + 1, y, matrix) && Free(x + 1, y - 1, matrix) && Free(x, y - 1, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 2, y - 1, matrix) && Free(x + 1, y, matrix) && Free(x - 2, y, matrix) && Free(x + 1, y + 1, matrix) && Free(x, y + 1, matrix) && Free(x - 1, y + 1, matrix) && Free(x - 2, y + 1, matrix))
                                 {
-                                    PlayerMatrix[x, y] = 1;
-                                    PlayerMatrix[x - 1, y] = 1;
-                                    PlayerMatrix[x - 2, y] = 1;
-                                    PlayerMatrix[x - 3, y] = 1;
+									matrix[x, y] = 1;
+									matrix[x - 1, y] = 1;
                                     stop = true;
                                 }
                             }
@@ -478,7 +479,7 @@ namespace Game
             while (!stop);
         }
 
-        private void Ship1()
+        private void Ship1(int[,] matrix)
         {
             bool stop = false;
             int x;
@@ -490,9 +491,9 @@ namespace Game
                 try
                 {
                     // It is only a dot and the neighbours of it
-                    if (Free(x, y) && Free(x - 1, y - 1) && Free(x - 1, y) && Free(x - 1, y + 1) && Free(x, y - 1) && Free(x, y + 1) && Free(x + 1, y - 1) && Free(x + 1, y) && Free(x + 1, y + 1))
+                    if (Free(x, y, matrix) && Free(x - 1, y - 1, matrix) && Free(x - 1, y, matrix) && Free(x - 1, y + 1, matrix) && Free(x, y - 1, matrix) && Free(x, y + 1, matrix) && Free(x + 1, y - 1, matrix) && Free(x + 1, y, matrix) && Free(x + 1, y + 1, matrix))
                     {
-                        PlayerMatrix[x, y] = 1;
+						matrix[x, y] = 1;
                         stop = true;
                     }
                 }
@@ -507,17 +508,29 @@ namespace Game
         private void Randomize()
         {
             Start();
-            Ship5();
-            Ship4();
-            Ship3();
-            Ship2();
-            Ship2();
-            Ship1();
-            Ship1();
+            Ship5(PlayerMatrix);
+            Ship4(PlayerMatrix);
+            Ship3(PlayerMatrix);
+            Ship2(PlayerMatrix);
+            Ship2(PlayerMatrix);
+            Ship1(PlayerMatrix);
+            Ship1(PlayerMatrix);
             ShowPlayerMatrix();
+		}
+
+        private void GenerateEnemyTable()
+        {
+			Ship5(EnemyMatrix);
+			Ship4(EnemyMatrix);
+			Ship3(EnemyMatrix);
+			Ship2(EnemyMatrix);
+			Ship2(EnemyMatrix);
+			Ship1(EnemyMatrix);
+			Ship1(EnemyMatrix);
+            ShowPlayerAttacksMatrix();
         }
 
-        private void Attack(object sender, RoutedEventArgs e)
+		private void Attack(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
             int attackRow = Grid.GetRow(b);
@@ -534,6 +547,7 @@ namespace Game
         private void RandomButton(object sender, RoutedEventArgs e)
         {
             Randomize();
+            GenerateEnemyTable();
         }
 
     }
