@@ -535,7 +535,17 @@ namespace Game
             Button b = sender as Button;
             int attackRow = Grid.GetRow(b);
             int attackColumn = Grid.GetColumn(b);
-            PlayerAttacksMatrix[attackRow, attackColumn] = 2;
+
+            switch(EnemyMatrix[attackRow, attackColumn])
+            {
+                case 0:
+                    PlayerAttacksMatrix[attackRow, attackColumn] = 2;
+                    break;
+                case 1:
+                    PlayerAttacksMatrix[attackRow, attackColumn] = 3;
+                    break;
+
+            }
             ShowPlayerAttacksMatrix();
         }
 
