@@ -125,7 +125,6 @@ namespace Game
                     Button nb = new();
                     nb.HorizontalAlignment = HorizontalAlignment.Stretch;
                     nb.VerticalAlignment = VerticalAlignment.Stretch;
-                    //nb.Content = $"{i}:{j}";
                     switch (PlayerMatrix[i, j])
                     {
                         case 0:
@@ -530,12 +529,38 @@ namespace Game
             ShowPlayerAttacksMatrix();
         }
 
+        private void EnemyAttack()
+        {
+            bool stop = false;
+            int x;
+            int y;
+            do
+            {
+                x = r.Next(1, 9);
+                y = r.Next(1, 9);
+                if (PlayerMatrix[x, y] == 0 || PlayerMatrix[x, y] == 1)
+                {
+                    switch (PlayerMatrix[x, y])
+                    {
+					    case 0:
+						    PlayerMatrix[x, y] = 2;
+						    break;
+					    case 1:
+						    PlayerMatrix[x, y] = 3;
+						    break;
+				    }
+                    stop = true;
+                }
+			}
+            while (!stop);
+            ShowPlayerMatrix();
+        }
+
 		private void Attack(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
             int attackRow = Grid.GetRow(b);
             int attackColumn = Grid.GetColumn(b);
-
             switch(EnemyMatrix[attackRow, attackColumn])
             {
                 case 0:
@@ -544,9 +569,9 @@ namespace Game
                 case 1:
                     PlayerAttacksMatrix[attackRow, attackColumn] = 3;
                     break;
-
             }
             ShowPlayerAttacksMatrix();
+            EnemyAttack();
         }
 
         private void Start(object sender, RoutedEventArgs e)
