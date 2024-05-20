@@ -1,0 +1,85 @@
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\bin\Debug\net7.0-windows\Game.exe
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\bin\Debug\net7.0-windows\Game.deps.json
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\bin\Debug\net7.0-windows\Game.runtimeconfig.json
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\bin\Debug\net7.0-windows\Game.dll
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\bin\Debug\net7.0-windows\Game.pdb
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game.csproj.AssemblyReference.cache
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\App.g.cs
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game_MarkupCompile.cache
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game_MarkupCompile.lref
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\MainWindow.baml
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game.g.resources
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game.AssemblyInfoInputs.cache
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game.AssemblyInfo.cs
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game.csproj.CoreCompileInputs.cache
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game.dll
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\refint\Game.dll
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game.pdb
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\Game.genruntimeconfig.cache
+C:\11.F\Erdei Gergő\IKT\Logikai játék project\Game\Game\Game\obj\Debug\net7.0-windows\ref\Game.dll
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\bin\Debug\net7.0-windows\Game.exe
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\bin\Debug\net7.0-windows\Game.deps.json
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\bin\Debug\net7.0-windows\Game.runtimeconfig.json
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\bin\Debug\net7.0-windows\Game.dll
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\bin\Debug\net7.0-windows\Game.pdb
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.csproj.AssemblyReference.cache
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game_MarkupCompile.cache
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game_MarkupCompile.lref
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\MainWindow.baml
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.g.resources
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.AssemblyInfoInputs.cache
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.AssemblyInfo.cs
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.csproj.CoreCompileInputs.cache
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.dll
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\refint\Game.dll
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.pdb
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\Game.genruntimeconfig.cache
+C:\Users\erdei.gergo.janos\Documents\Erdei Gergő\V\Game\Game\obj\Debug\net7.0-windows\ref\Game.dll
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\bin\Debug\net7.0-windows\Game.exe
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\bin\Debug\net7.0-windows\Game.deps.json
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\bin\Debug\net7.0-windows\Game.runtimeconfig.json
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\bin\Debug\net7.0-windows\Game.dll
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\bin\Debug\net7.0-windows\Game.pdb
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\Game.csproj.AssemblyReference.cache
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\App.g.cs
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\Game_MarkupCompile.cache
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\Game_MarkupCompile.lref
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\MainWindow.baml
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\Game.g.resources
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\Game.AssemblyInfoInputs.cache
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\Game.AssemblyInfo.cs
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\Game.csproj.CoreCompileInputs.cache
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\Game.dll
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\refint\Game.dll
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\Game.pdb
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\Game.genruntimeconfig.cache
+C:\11.F\Erdei Gergő\IKT\kik\Game\Game\obj\Debug\net7.0-windows\ref\Game.dll
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\bin\Debug\net7.0-windows\Game.exe
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\bin\Debug\net7.0-windows\Game.deps.json
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\bin\Debug\net7.0-windows\Game.runtimeconfig.json
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\bin\Debug\net7.0-windows\Game.dll
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\bin\Debug\net7.0-windows\Game.pdb
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\MainWindow.g.cs
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\App.g.cs
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\Game_MarkupCompile.cache
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\Game_MarkupCompile.lref
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\MainWindow.baml
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\Game.g.resources
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\Game.GeneratedMSBuildEditorConfig.editorconfig
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\Game.AssemblyInfoInputs.cache
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\Game.AssemblyInfo.cs
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\Game.csproj.CoreCompileInputs.cache
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\Game.dll
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\refint\Game.dll
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\Game.pdb
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\Game.genruntimeconfig.cache
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\ref\Game.dll
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\End.g.cs
+D:\Suli\IKT\11. osztály\Torpedó project\AGHH\Game\Game\obj\Debug\net7.0-windows\End.baml
