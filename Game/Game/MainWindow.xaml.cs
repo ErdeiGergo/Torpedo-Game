@@ -529,7 +529,40 @@ namespace Game
             ShowPlayerAttacksMatrix();
         }
 
-        private void EnemyAttack()
+        private void WinOrLose()
+        {
+			End end = new End();
+			int PlayerDestroyedShip = 0;
+			int EnemyDestroyedShip = 0;
+			for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+					if (PlayerMatrix[i, j] == 3)
+                        PlayerDestroyedShip++;
+                    if (EnemyMatrix[i, j] == 3)
+                        EnemyDestroyedShip++;
+                }
+            }
+			//18 is the number of all ships in one side
+            if (PlayerDestroyedShip == 18)
+            {
+				end.result.Content = "Defeat!";
+                end.Show();
+            }
+			if (EnemyDestroyedShip == 18)
+            {
+				end.result.Content = "Victory!";
+                end.Show();
+            }
+            if (PlayerDestroyedShip == 18 && EnemyDestroyedShip == 18)
+            {
+                end.result.Content = "Draw!";
+                end.Show();
+            }
+		}
+
+		private void EnemyAttack()
         {
             bool stop = false;
             int x;
@@ -554,6 +587,7 @@ namespace Game
 			}
             while (!stop);
             ShowPlayerMatrix();
+            WinOrLose();
         }
 
 		private void Attack(object sender, RoutedEventArgs e)
@@ -565,10 +599,12 @@ namespace Game
             {
                 case 0:
                     PlayerAttacksMatrix[attackRow, attackColumn] = 2;
-                    break;
+					EnemyMatrix[attackRow, attackColumn] = 2;
+					break;
                 case 1:
                     PlayerAttacksMatrix[attackRow, attackColumn] = 3;
-                    break;
+					EnemyMatrix[attackRow, attackColumn] = 3;
+					break;
             }
             ShowPlayerAttacksMatrix();
             EnemyAttack();

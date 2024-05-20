@@ -1,0 +1,14 @@
+﻿<Window x:Class="Game.End"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game"
+        mc:Ignorable="d"
+        Title="End" Height="300" Width="500"
+		WindowStartupLocation="CenterScreen">
+    <Grid>
+		<Button x:Name="exit" HorizontalAlignment="Right" VerticalAlignment="Top" Height="30" Width="30" Content="X" Click="exit_Click"/>
+		<Label x:Name="result" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+	</Grid>
+</Window>
