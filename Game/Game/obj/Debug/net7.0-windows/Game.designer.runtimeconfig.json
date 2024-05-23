@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Erdei Gergő\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Erdei Gergő\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\erdei.gergo.janos\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\erdei.gergo.janos\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
